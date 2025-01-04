@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "@clerk/nextjs": "^6.9.6",
+>>>>>>> 9c09853 (clerk)
     "@react-google-maps/api": "^2.20.5",
     "@types/nodemailer": "^6.4.17",
     "@types/react-slick": "^0.23.13",

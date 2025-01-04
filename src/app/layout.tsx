@@ -8,6 +8,7 @@ import CategoryBar from "./ui/CategoryBar";
 import { GlobalProvider } from "@/app/GlobalProvider";
 import ToastProvider from "@/app/providers/toast-provider";
 import CategoryBarServer from "./ui/CategoryBarServer";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
   title: "Gupta Switchgears: Electrical Automation Bestseller",
@@ -27,13 +28,15 @@ export default function RootLayout({
       </head>
       <body className="overflow-x-hidden">
         <div>
-          <GlobalProvider>
-            <Navbar />
-            <CategoryBarServer />
-            <ToastProvider />
-            {children}
-            <Footer />
-          </GlobalProvider>
+          <ClerkProvider>
+            <GlobalProvider>
+              <Navbar />
+              <CategoryBarServer />
+              <ToastProvider />
+              {children}
+              <Footer />
+            </GlobalProvider>
+          </ClerkProvider>
         </div>
       </body>
     </html>
